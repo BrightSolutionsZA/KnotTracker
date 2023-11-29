@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_charcoal"
+    android:orientation="vertical"
+    tools:context=".Login"
+    tools:ignore="Overdraw">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="233dp"
+        android:layout_gravity="center"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/knot_tracker_logo_white"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/purple_200"
+        android:fontFamily="@font/oxanium_bold"
+        android:padding="20dp"
+        android:text="@string/please_login_with_the_correct_username_and_password_associated_with_your_account"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/scouts_purple"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextUserNameLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/editTextTextUserNameLogin"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/purple_200"
+        android:drawableStart="@drawable/reg_username"
+        android:elevation="10dp"
+        android:ems="10"
+        android:hint="@string/username"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/purple_2"
+        android:textColorHint="@color/purple_2"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPasswordLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/editTextTextPasswordLogin"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/purple_200"
+        android:drawableStart="@drawable/password_reg"
+        android:elevation="10dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="@color/purple_2"
+        android:textColorHint="@color/purple_2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextUserNameLogin" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:backgroundTint="@color/purple_200"
+        android:elevation="10dp"
+        android:text="@string/login"
+        android:textColor="#311B92"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBackToMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPasswordLogin" />
+
+    <Button
+        android:id="@+id/buttonBackToMenu"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/purple_200"
+        android:elevation="10dp"
+        android:onClick="backToMenu"
+        android:text="@string/back_to_menu"
+        android:textColor="#311B92"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        app:layout_constraintVertical_bias="0.103" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
