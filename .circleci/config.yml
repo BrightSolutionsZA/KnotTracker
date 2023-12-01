@@ -13,7 +13,6 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-      - run: npm ci
       - snyk/scan
     
   sonarqube:
