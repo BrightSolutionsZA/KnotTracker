@@ -21,6 +21,7 @@ jobs:
         - run: find .
         - attach_workspace:
             at: ~/workspace
+        - snyk/scan
         - run: |
             SONAR_BRANCH="${CIRCLE_BRANCH:-main}"
             echo "Sonar branch value is: " $SONAR_BRANCH
@@ -33,7 +34,6 @@ jobs:
             -Dsonar.login="$SONAR_TOKEN" \
             -Dsonar.branch.name="$SONAR_BRANCH" \
             -Dsonar.sources="."
-       - snyk/scan
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
