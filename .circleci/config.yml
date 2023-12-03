@@ -8,13 +8,6 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  snyk:
-    docker:
-      - image: cimg/node:lts
-    steps:
-      - checkout
-      - snyk/scan
-    
   sonarqube:
       working_directory: ~/build
       docker:
@@ -25,6 +18,7 @@ jobs:
         - run: apk upgrade
         - run: apk --no-cache add --update openssh git curl
         - checkout
+        - snyk/scan
         - run: find .
         - attach_workspace:
             at: ~/workspace
