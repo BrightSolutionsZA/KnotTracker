@@ -4,6 +4,7 @@ version: 2.1
 
 orbs:
   snyk: snyk/snyk@2.0.2
+  gradle: circleci/gradle@3.0.0
   
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
@@ -18,7 +19,6 @@ jobs:
         - run: apk upgrade
         - run: apk --no-cache add --update openssh git curl
         - checkout
-        - snyk/scan
         - run: find .
         - attach_workspace:
             at: ~/workspace
@@ -40,4 +40,5 @@ jobs:
 workflows:
   main-workflow:
     jobs:
-      - sonarqube
+      - gradle/test # Tests the gradle
+      - sonarqube # Code quality test
